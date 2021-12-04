@@ -1,7 +1,6 @@
 body {
     margin: 0;
     height: 100%;
-    background: #F7F7F7 0% 0% no-repeat padding-box;
 }
 
 .header {
@@ -43,4 +42,42 @@ body {
 
 * {
     box-sizing: border-box;
+}
+
+.form-content {
+    min-height: calc(100% - 80px);
+    background: #F7F7F7 0% 0% no-repeat padding-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid green;
+    flex-direction: column;
+}
+
+.form {
+    width: 65%;
+    padding: 44px 60px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border: 1px solid #F5F5F5;
+    border-radius: 8px;
+    opacity: 1;
+}
+
+.form-head {
+    width: 65%;
+    height: 108px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font: normal normal normal 28px/37px Roboto;
+    letter-spacing: 0px;
+    background-color: #008CFF;
+    text-transform: uppercase;
+    opacity: 1;
+    align-items: center;
+}
+
+.cancel-button {
+    width: 50px;
 }
