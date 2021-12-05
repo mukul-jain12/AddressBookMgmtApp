@@ -23,7 +23,7 @@
             <span> PERSON ADDRESS FORM </span>
             <span id="img"><a href="../pages/homePage.html" class="cancel-button"><img src="../assets/icons/cancel.png" height="20" width="20" alt=""></a></span>
         </div>
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save(); return false">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
             <label class="label text" for="name">Full Name</label>
             <div class="row-content">
                 <input class="input" type="text" id="name" name="name" placeholder="Enter Name" required>
@@ -47,7 +47,7 @@
                     <label class="label text" for="city">City</label>
                     <div class="row-content">
                         <select class="input" name="city" id="city">
-                            <option value="">City</option>
+                            <option value="City">City</option>
                             <option value="Mumbai">Mumbai</option>
                             <option value="Patna">Patna</option>
                             <option value="Chennai">Chennai</option>
@@ -60,7 +60,7 @@
                     <label class="label text" for="state">State</label>
                     <div class="row-content">
                         <select class="input" name="state" id="state">
-                            <option value="">State</option>
+                            <option value="State">State</option>
                             <option value="Rajasthan">Rajasthan</option>
                             <option value="Maharashtra">Maharashtra</option>
                             <option value="West Bengal">West Bengal</option>
@@ -86,6 +86,7 @@
     </div>
 
     <script type="text/javascript" src="../js/AddressBookForm.js"></script>
+    <script type="text/javascript" src="../js/AddressBookContact.js"></script>
 </body>
 
 </html>

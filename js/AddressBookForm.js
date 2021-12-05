@@ -24,13 +24,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     })
 });
 
-//on save
 const save = () => {
-    let contactList = createEmployeePayroll();
+    let contactList = createAddressBook();
     createAndUpdateStorage(contactList);
 };
 
-const createEmployeePayroll = () => {
+const createAddressBook = () => {
+    
     let contactList = new AddressBookContact();
 
     contactList.name = getInputValueById('#name');
@@ -41,12 +41,12 @@ const createEmployeePayroll = () => {
     contactList.zip = getInputValueById('#zip');
     alert(contactList.toString());
     return contactList;
-}
+};
 
 const getInputValueById = (id) => {
     let value = document.querySelector(id).value;
     return value;
-}
+};
 
 function createAndUpdateStorage(contactList) {
     let addressBookList = JSON.parse(localStorage.getItem("AddressBookList"));
@@ -57,4 +57,4 @@ function createAndUpdateStorage(contactList) {
     }
     alert(addressBookList.toString());
     localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
-}
+};
