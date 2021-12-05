@@ -25,13 +25,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 const save = () => {
-    let contactList = createAddressBook();
-    createAndUpdateStorage(contactList);
+    try{
+        let contactList = createAddressBook();
+        createAndUpdateStorage(contactList);
+    } catch (e) {
+        return;
+    }
 };
 
 const createAddressBook = () => {
     
     let contactList = new AddressBookContact();
+
+    try {
+        contactList.name = getInputValueById('#name');
+    } catch (e) {
+        setTextValue('.name-error', e);
+        throw e;
+    }
 
     contactList.name = getInputValueById('#name');
     contactList.phone = getInputValueById('#phone');
@@ -58,3 +69,22 @@ function createAndUpdateStorage(contactList) {
     alert(addressBookList.toString());
     localStorage.setItem("AddressBookList", JSON.stringify(addressBookList));
 };
+
+const resetForm = () => {
+    setValue('#name', '');
+    setValue('#phone', '');
+    setValue('#address', '');
+    setValue('#city', 'City');
+    setValue('#state', 'State');
+    setValue('#zip', '');
+};
+
+const setTextValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.textContent = value;
+}
+
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.value = value;
+}
